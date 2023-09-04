@@ -205,6 +205,14 @@ class CarInterface(CarInterfaceBase):
         ret.steerRatio = 13.0
         ret.lateralTuning.pid.kiBP, ret.lateralTuning.pid.kpBP = [[0.], [0.]]
         ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.25], [0.05]]
+      elif candidate == CAR.TUCSON_TL_SCC:
+        ret.lateralTuning.pid.kf = 0.00005
+        ret.mass = 1594. + STD_CARGO_KG #1730
+        ret.wheelbase = 2.67
+        ret.steerRatio = 13.0
+        ret.lateralTuning.pid.kiBP, ret.lateralTuning.pid.kpBP = [[0.], [0.]]
+        ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.25], [0.05]]
+        
     elif int(params.get('LateralControlMethod')) == 1:
       if candidate == CAR.SANTAFE:
         ret.lateralTuning.init('indi')
