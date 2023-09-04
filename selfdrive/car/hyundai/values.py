@@ -45,8 +45,8 @@ class CAR:
   I30 = "HYUNDAI I30"
   SELTOS = "KIA SELTOS"
   PALISADE = "HYUNDAI PALISADE"
-
-
+  TUCSON_TL_SCC  = "HYUNDAI TUCSON TL SCC 2017"
+  
 class Buttons:
   NONE = 0
   RES_ACCEL = 1
@@ -105,6 +105,11 @@ if fingerprint_issued_fix:
     CAR.SELTOS: [{}],
     CAR.PALISADE: [{}],
     CAR.SORENTO: [{}],
+    CAR.TUCSON_TL_SCC: [{
+      64: 8, 66: 8, 67: 8, 68: 8, 127: 8, 273: 8, 274: 8, 275: 8, 339: 8, 356: 4, 399: 8, 512: 6, 544: 8, 608: 8, 790: 8, 809: 8, 832: 8, 899: 8, 902: 8, 903: 8, 909: 8, 916: 8, 1040: 8, 1056: 8, 1057: 8, 1078: 4, 1151: 6, 1168: 7, 1170: 8, 1186: 2, 1191: 2, 1265: 4, 1280: 1, 1282: 4, 1287: 4, 1290: 8, 1292: 8, 1312: 8, 1314: 8, 1322: 8, 1342: 6, 1345: 8, 1348: 8, 1349: 8, 1351: 8, 1353: 8, 1363: 8, 1365: 8, 1366: 8, 1367: 8, 1369: 8, 1407: 8, 1419: 8, 1427: 6, 1440: 8, 1456: 4, 1470: 8, 1472: 8, 1491: 8, 1530: 8
+    },{
+      64: 8, 66: 8, 67: 8, 68: 8, 127: 8, 273: 8, 274: 8, 275: 8, 339: 8, 356: 4, 399: 8, 512: 6, 544: 8, 608: 8, 790: 8, 809: 8, 832: 8, 899: 8, 902: 8, 903: 8, 909: 8, 916: 8, 1040: 8, 1056: 8, 1057: 8, 1078: 4, 1151: 6, 1168: 7, 1170: 8, 1186: 2, 1191: 2, 1265: 4, 1280: 1, 1282: 4, 1287: 4, 1290: 8, 1292: 8, 1312: 8, 1314: 8, 1322: 8, 1342: 6, 1345: 8, 1348: 8, 1349: 8, 1351: 8, 1353: 8, 1363: 8, 1365: 8, 1366: 8, 1367: 8, 1369: 8, 1407: 8, 1419: 8, 1427: 6, 1440: 8, 1456: 4, 1470: 8, 1472: 8, 1491: 8, 1530: 8, 2015: 8, 2024: 8, 2025: 8
+    }],
   }
 else:
   FINGERPRINTS = {
@@ -182,7 +187,7 @@ CHECKSUM = {
 FEATURES = {
   # which message has the gear
   "use_cluster_gears": [CAR.KONA, CAR.GRANDEUR, CAR.K7, CAR.MOHAVE, CAR.I30, CAR.AVANTE],     # Use Cluster for Gear Selection, rather than Transmission
-  "use_tcu_gears": [CAR.K5, CAR.SONATA, CAR.SONATA_TURBO],                                    # Use TCU Message for Gear Selection
+  "use_tcu_gears": [CAR.K5, CAR.SONATA, CAR.SONATA_TURBO, CAR.TUCSON_TL_SCC],                                    # Use TCU Message for Gear Selection
   "use_elect_gears": [CAR.K5_HEV, CAR.SONATA_HEV, CAR.GRANDEUR_HEV, CAR.IONIQ_HEV, CAR.IONIQ_EV, CAR.NIRO_HEV, CAR.KONA_HEV, CAR.KONA_EV, CAR.NIRO_EV, CAR.NEXO], # Use TCU Message for Gear Selection
   "send_lfa_mfa": [CAR.PALISADE],
   # these cars use the FCA11 message for the AEB and FCW signals, all others use SCC12
@@ -220,6 +225,7 @@ DBC = {
   CAR.SELTOS: dbc_dict('hyundai_kia_generic', None),
   CAR.PALISADE: dbc_dict('hyundai_kia_generic', None),
   CAR.SORENTO: dbc_dict('hyundai_kia_generic', None),
+  CAR.TUCSON_TL_SCC: dbc_dict('hyundai_kia_generic', None),
 }
 
 
